@@ -1,0 +1,81 @@
+var backgroundImg;
+var count = 0;
+var fade;
+var fadeAmount = 1;
+var canvas;
+
+function setup() {
+  createCanvas(600, 400);
+  fade = 0;
+}
+function preload(){
+   backgroundImg = loadImage("brain.jpg");
+   backgroundImg2 = loadImage("neurons.jpg");
+}
+function draw() {
+  if (count == 0){
+  background(backgroundImg);
+  strokeWeight(7);
+  stroke(10);
+  textSize(30);
+  textFont('Courier New');
+  textAlign(CENTER);
+  let t = 'Your Next Step To Regaining Your Fine Motor Skills';
+  let v = 'Click Anywhere To Continue';
+  fill(255, fade);
+  if (fade<0) fadeAmount=1;
+    fade += fadeAmount;
+  text(t,150,80,300);
+  print(fade);
+  fill(255, fade);
+  text(v, 50, 300,520);
+  print(fade);
+  }
+  if (count == 1){
+  background(backgroundImg2);
+  strokeWeight(7);
+  stroke(20);
+  textSize(30);
+  textFont('Courier New');
+  textAlign(CENTER);
+  let s = 'Directory';
+  let c = color(180, 140, 255);
+  fill(c);
+  text(s,240,30,100);
+  text("Select An Exercise", 105,60,375);
+  button = createButton('Typing');
+  button.size(140,50);
+  button.position(355,280,400);
+  button.style("font-family", "Bodoni");
+  button.mousePressed(open1);
+  button2 = createButton('Stay in the Line!');
+  button2.size(125,50);
+  button2.position(440,110,500);
+  button2.style("font-family", "Bodoni");
+  button2.mousePressed(open2);
+  button3 = createButton('Reaction Time');
+  button3.size(200,75);
+  button3.position(70,175,500);
+  button3.style("font-family", "Bodoni");
+  button3.mousePressed(open3);
+  }
+}
+function mousePressed(){
+  if (count == 0);
+  count = count + 1;
+}
+function open1(){
+  button.hide();
+  clearCanvas();
+}
+function open2(){
+  background(125);
+}
+function open3(){
+  background(255);
+}
+function clearCanvas() {
+    rect(0, 0, canvas.width, canvas.height);
+    background(0);
+}
+
