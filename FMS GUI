@@ -18,8 +18,8 @@ function draw() {
   strokeWeight(7);
   stroke(10);
   textSize(30);
-  textFont('Courier New');
   textAlign(CENTER);
+  textFont('Courier New');
   let t = 'Your Next Step To Regaining Your Fine Motor Skills';
   let v = 'Click Anywhere To Continue';
   fill(255, fade);
@@ -43,11 +43,11 @@ function draw() {
   fill(c);
   text(s,240,30,100);
   text("Select An Exercise", 105,60,375);
-  button = createButton('Typing');
-  button.size(140,50);
-  button.position(355,280,400);
-  button.style("font-family", "Bodoni");
-  button.mousePressed(open1);
+  button1 = createButton('Typing');
+  button1.size(140,50);
+  button1.position(355,280,400);
+  button1.style("font-family", "Bodoni");
+  button1.mousePressed(open1);
   button2 = createButton('Stay in the Line!');
   button2.size(125,50);
   button2.position(440,110,500);
@@ -56,7 +56,7 @@ function draw() {
   button3 = createButton('Reaction Time');
   button3.size(200,75);
   button3.position(70,175,500);
-  button3.style("font-family", "Bodoni");
+  button3.style("font-family", "Bodoni");  
   button3.mousePressed(open3);
   }
 }
@@ -65,17 +65,72 @@ function mousePressed(){
   count = count + 1;
 }
 function open1(){
-  button.hide();
   clearCanvas();
+  strokeWeight(7);
+  stroke(10);
+  textSize(25);
+  textFont('Courier New');
+  let e = 'Press the Right Key!';
+  text(e,240,30,100);
+  button4 = createButton('Back to Directory');
+  button4.size(125,50);
+  button4.position(30,330,200);
+  button4.mousePressed(direct);
 }
 function open2(){
   background(125);
+  strokeWeight(6);
+  stroke(10);
+  textSize(25);
+  textFont('Courier New');
+  let e = 'Draw Within the Lines!';
+  text(e,240,30,100);
+  button4 = createButton('Back to Directory');
+  button4.size(125,50);
+  button4.position(30,330,200);
+  button4.mousePressed(direct);
 }
 function open3(){
   background(255);
+  strokeWeight(7);
+  stroke(10);
+  textSize(25);
+  textFont('Courier New');
+  let e = 'Test Your Reaction Time!';
+  text(e,240,30,100);
+  button4 = createButton('Back to Directory');
+  button4.size(125,50);
+  button4.position(30,330,200);
+  button4.mousePressed(direct);
 }
 function clearCanvas() {
     rect(0, 0, canvas.width, canvas.height);
     background(0);
 }
-
+function direct(){
+  background(backgroundImg2);
+  strokeWeight(7);
+  stroke(20);
+  textSize(30);
+  textFont('Courier New');
+  let s = 'Directory';
+  let c = color(180, 140, 255);
+  fill(c);
+  text(s,240,30,100);
+  text("Select An Exercise", 105,60,375);
+  button1 = createButton('Typing');
+  button1.size(140,50);
+  button1.position(355,280,400);
+  button1.style("font-family", "Bodoni");
+  button1.mousePressed(open1);
+  button2 = createButton('Stay in the Line!');
+  button2.size(125,50);
+  button2.position(440,110,500);
+  button2.style("font-family", "Bodoni");
+  button2.mousePressed(open2);
+  button3 = createButton('Reaction Time');
+  button3.size(200,75);
+  button3.position(70,175,500);
+  button3.style("font-family", "Bodoni");  
+  button3.mousePressed(open3);
+}
